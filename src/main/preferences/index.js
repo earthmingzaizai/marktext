@@ -37,7 +37,6 @@ class Preference extends EventEmitter {
     let defaultSettings = null
     try {
       defaultSettings = JSON.parse(fs.readFileSync(this.staticPath, { encoding: 'utf8' }) || '{}')
-
       // Set best theme on first application start.
       if (nativeTheme.shouldUseDarkColors) {
         defaultSettings.theme = 'dark'

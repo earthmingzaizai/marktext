@@ -95,7 +95,8 @@ const state = {
       branch: ''
     }
   },
-  cliScript: ''
+  cliScript: '',
+  rightColumn: 'toc'
 }
 
 const getters = {}

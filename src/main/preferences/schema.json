@@ -373,6 +373,15 @@
     "type": "boolean",
     "default": false
   },
+  "rightColumn": {
+    "description": "sizeBar default show.",
+    "enum": [
+      "toc",
+      "files",
+      "search"
+    ],
+    "default": "toc"
+  },
   "tabBarVisibility": {
     "description": "View--Whether the tabs are shown.",
     "type": "boolean",

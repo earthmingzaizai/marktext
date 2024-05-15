@@ -68,5 +68,6 @@
   "searchNoIgnore": false,
   "searchFollowSymlinks": true,
 
-  "watcherUsePolling": false
+  "watcherUsePolling": false,
+  "rightColumn": "toc"
 }

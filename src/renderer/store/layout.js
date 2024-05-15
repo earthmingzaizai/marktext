@@ -1,12 +1,13 @@
 import { ipcRenderer } from 'electron'
 import bus from '../bus'
+import preferences from './preferences'
 
 const width = localStorage.getItem('side-bar-width')
 const sideBarWidth = typeof +width === 'number' ? Math.max(+width, 220) : 280
 
 // messages from main process, and do not change the state
 const state = {
-  rightColumn: 'files',
+  rightColumn: preferences.state.rightColumn,
   showSideBar: false,
   showTabBar: false,
   sideBarWidth
@@ -42,7 +43,11 @@ const actions = {
           showSideBar: true
         })
       } else {
-        commit('SET_LAYOUT', layout)
+        console.log(preferences)
+        commit('SET_LAYOUT', {
+          ...layout,
+          rightColumn: preferences.state.rightColumn
+        })
       }
     })
 
