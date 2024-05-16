@@ -13,6 +13,7 @@ import {
   QuickOpenCommand,
   TrailingNewlineCommand
 } from '../commands'
+import preferences from '@/store/preferences'
 
 const autoSaveTimers = new Map()
 
@@ -642,7 +643,7 @@ const actions = {
       dispatch('SEND_INITIALIZED')
       commit('SET_USER_PREFERENCE', { endOfLine: lineEnding })
       commit('SET_LAYOUT', {
-        rightColumn: 'files',
+        rightColumn: preferences.state.rightColumn ? preferences.state.rightColumn : 'toc',
         showSideBar: !!sideBarVisibility,
         showTabBar: !!tabBarVisibility
       })
